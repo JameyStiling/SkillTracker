@@ -1,22 +1,42 @@
 <div class="container">
-  <a ui-sref="about" class="nav-link">about</a>
-  <h2>SkillsTracker</h2>
-  <form>
-    <input type="text" class="form-control skills__input" placeholder="New Skill to learn">
-    <button class="btn btn-success skills__button-input">Add Skill</button>
-  </form>
+	<a ui-sref="about" class="nav-link">about</a>
+	<h2>SkillsTracker</h2>
+	<form>
+		<input type="text" class="form-control skills__input" placeholder="New Skill to learn">
+		<button class="btn btn-success skills__button-input">Add Skill</button>
+	</form>
 
-  <div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">Skills List</div>
-  <div class="panel-body">
-    <p>Inspiration quote of the day</p>
-  </div>
+	<div class="panel panel-default">
+		<div class="panel-heading">Skills List</div>
+		<div class="panel-body">
+			<p>Inspiration quote of the day</p>
+		</div>
 
-  <!-- Table -->
-  <table class="table">
-
-  </table>
-</div>
+		<table class="table table-striped">
+			<tr>
+				<th>Skill</th>
+				<th>Goals</th>
+				<th>Progress</th>
+				<th>Actions</th>
+			</tr>
+			<tr ng-repeat="skill in skills">
+				<td><span class="skills__skill">{{skill.skill}}</span></td>
+				<td><span>{{skill.goal}}</span></td>
+				<td>
+					<div class="progress skills__progress">
+						<div class="progress-bar" role="progressbar" ng-style="{'width' : skill.progress}">
+							<span class="sr-only">60% Complete</span>
+						</div>
+					</div>
+				</td>
+				<td>
+					<div class="btn-group">
+						<button type="button" class="btn btn-default">Edit</button>
+						<button type="button" class="btn btn-danger">Delete</button>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
 
 </div>

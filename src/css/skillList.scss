@@ -1,3 +1,4 @@
+
 .skills {
   &__input {
     margin: 0 auto 6px;
@@ -7,4 +8,13 @@
     display: block;
     margin: 0 auto 12px;
   }
+  &__progress {
+    margin-bottom:0;
+    margin-top: 6px;
+  }
+}
+
+th,td {
+  font-size: 17px;
+  text-align: center;
 }
