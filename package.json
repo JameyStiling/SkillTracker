@@ -1,0 +1,29 @@
+{
+  "name": "SkillTracker",
+  "version": "1.0.0",
+  "description": "Schedule skills and track.   MEAN Application",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JameyStiling/SkillTracker.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JameyStiling/SkillTracker/issues"
+  },
+  "homepage": "https://github.com/JameyStiling/SkillTracker#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-loader": "^6.2.7",
+    "babel-preset-es2015": "^6.18.0",
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  }
+}
