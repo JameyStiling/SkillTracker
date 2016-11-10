@@ -1,5 +1,6 @@
 import angular from 'angular';
 import uiRouter from 'angular-ui-router';
+import skillsController from 'skills/skills'
 
 const app = angular.module('app', [uiRouter]);
   //config for uiRouter.  applied during bootstrap process
@@ -12,7 +13,8 @@ const app = angular.module('app', [uiRouter]);
     $stateProvider
       .state('skills', {
         url: '/',
-        template: require('skills/skills.html')
+        template: require('skills/skills.html'),
+        controller: skillsController
       })
       .state('about', {
         url: '/about',
