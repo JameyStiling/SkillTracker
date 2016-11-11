@@ -8,11 +8,13 @@ export default function ($scope) {
       skill: 'Angular',
       goal: '100 hrs',
       progress: '80%',
+      editing: false;
     },
     {
       skill: 'React',
       goal: '200 hrs',
       progress: '70%',
+      editing: false;
     }
   ]
 
@@ -20,6 +22,14 @@ export default function ($scope) {
     params.createHasInput = false;
     $scope.newSkillInput = '';
     $scope.newGoalInput = '';
+  }
+
+    $scope.onEdit = input => {
+      skill.editing = true;
+  }
+
+    $scope.onDelete = () => {
+
   }
 
   //watches for new skill or goal input and dynamically adds the content in a new row
