@@ -16,14 +16,24 @@ export default function ($scope) {
     }
   ]
 
+  $scope.createSkill = () => {
+    params.createHasInput = false;
+    $scope.newSkillInput = '';
+    $scope.newGoalInput = '';
+  }
+
   //watches for new skill or goal input and dynamically adds the content in a new row
   $scope.$watchGroup(['newSkillInput', 'newGoalInput'],(values) => {
-    if (values[0] && !params.createHasInput) {
+    if (!values[1]) values[1] = '0';
+    if (!values[0] && params.createHasInput) {
+      $scope.skills.pop();
+      params.createHasInput = false;
+    } else if (values[0] && !params.createHasInput) {
       $scope.skills.push({ skill: values[0], goal: values[1] });
       params.createHasInput = true;
     } else if (values[0] && params.createHasInput) {
       $scope.skills[$scope.skills.length - 1].skill = values[0];
-      $scope.skills[$scope.skills.length - 1].goal = values[1];
+      $scope.skills[$scope.skills.length - 1].goal = `${values[1]} hrs`;
     }
   })
 
